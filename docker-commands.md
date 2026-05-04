@@ -1,41 +1,59 @@
 # Docker Practical – SET B
 
 ## Build Image
-docker build -t myapp .
 
+```bash
+docker build -t myapp .
+```
 
 ## Run Private Registry
-docker run -d -p 5001:5000 --name registry registry:2
 
+```bash
+docker run -d -p 5001:5000 --name registry registry:2
+```
 
 ## Tag Image
-docker tag myapp localhost:5001/myapp
 
+```bash
+docker tag myapp localhost:5001/myapp
+```
 
 ## Push Image
-docker push localhost:5001/myapp
 
+```bash
+docker push localhost:5001/myapp
+```
 
 ## Verify Registry
-curl http://localhost:5001/v2/_catalog
 
+```bash
+curl http://localhost:5001/v2/_catalog
+```
 
 Output:
-{"repositories":["myapp"]}
 
+```json
+{"repositories":["myapp"]}
+```
 
 ## Run Container
-docker run -d -p 3000:3000 myapp
 
+```bash
+docker run -d -p 3000:3000 myapp
+```
 
 ## Test Application
+
+```bash
 curl http://localhost:3000
+```
 
 Output:
+
+```
 Hello Docker 🚀
+```
 
-
-## Rebuilt using
+# **Rebuilt using**
 
 docker build --no-cache -t myapp .
-
