@@ -55,5 +55,6 @@ Hello Docker 🚀
 ```
 
 # **Rebuilt using**
-
+```bash
 docker build --no-cache -t myapp .
+```
